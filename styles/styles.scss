@@ -1,0 +1,16 @@
+/* Color Theme Swatches in Hex */
+$Poseidon-1-hex: #012030;
+$Poseidon-2-hex: #13678A;
+$Poseidon-3-hex: #45C4B0;
+$Poseidon-4-hex: #9AEBA3;
+$Poseidon-5-hex: #DAFDBA;
+
+@use 'posts';
+
+a {
+    color: $Poseidon-3-hex;
+}
+
+main {
+    // background-color: $Poseidon-1-hex;
+}
