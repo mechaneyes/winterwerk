@@ -12,14 +12,14 @@ export default function HeroPost({
   slug,
 }) {
   return (
-    <section>
+    <section className="hero-post">
       <div className="hero-post__image hero-post__image--cover mb-8 md:mb-16">
         {coverImage && (
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
         )}
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-        <div>
+      <div className="md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
+        <div className="hero-post__meta">
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
             <Link
               href={`/posts/${slug}`}
@@ -30,13 +30,13 @@ export default function HeroPost({
           <div className="mb-4 md:mb-0 text-lg">
             <Date dateString={date} />
           </div>
+          {/* <Avatar author={author} /> */}
         </div>
         <div>
           <div
             className="text-lg leading-relaxed mb-4"
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
-          <Avatar author={author} />
         </div>
       </div>
     </section>

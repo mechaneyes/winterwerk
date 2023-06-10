@@ -11,11 +11,19 @@ a {
     color: $Poseidon-3-hex;
 }
 
+h1.tracking-tighter {
+    letter-spacing: -.06em;
+}
+
 main {
     // background-color: $Poseidon-1-hex;
 }
 
 .hero-post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
     &__image {
         &--cover {
             width: 60vw;
@@ -33,6 +41,14 @@ main {
                 max-height: none;
                 aspect-ratio: auto;
             }
+        }
+    }
+
+    &__meta {
+        margin-bottom: 1rem;
+
+        h3 {
+            margin-bottom: 0.25rem;
         }
     }
 }
