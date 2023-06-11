@@ -21,7 +21,8 @@ a {
     color: $fun-summer-woman-3-hex;
 }
 
-h1.tracking-tighter {
+h1.tracking-tighter,
+h2.md\:tracking-tighter {
     letter-spacing: -.06em;
 }
 
@@ -35,16 +36,27 @@ main {
     @include bp('small') {
         padding: 0 1.25rem;
     }
+}
+
+.home-header {
+    @include bp('medium') {
+        align-items: flex-end;
+        margin-bottom: 3rem;
+    }
 
     h1 {
         font-size: 3.25rem;
+        line-height: 3.25rem;
 
         @include bp('small') {
             font-size: 6.25rem;
+            line-height: 6.25rem;
         }
     }
 
-    section {
-        // border: 1px solid red;
+    h4 {
+        @include bp('medium') {
+            padding-bottom: 7px;
+        }
     }
 }
