@@ -12,12 +12,13 @@ export default function PostPreview({
   slug,
 }) {
   return (
-    <div>
-      <div className="mb-5">
-        {coverImage && (
+    <div className='more-stories__post'>
+      {coverImage && (
+        <div className="mb-5">
           <CoverImage title={title} coverImage={coverImage} slug={slug} />
-        )}
-      </div>
+        </div>
+      )}
+
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
           href={`/posts/${slug}`}
@@ -32,7 +33,7 @@ export default function PostPreview({
         className="text-lg leading-relaxed mb-4"
         dangerouslySetInnerHTML={{ __html: excerpt }}
       />
-      <Avatar author={author} />
+      {/* <Avatar author={author} /> */}
     </div>
   )
 }

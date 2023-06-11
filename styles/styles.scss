@@ -5,11 +5,20 @@ $Poseidon-3-hex: #45C4B0;
 $Poseidon-4-hex: #9AEBA3;
 $Poseidon-5-hex: #DAFDBA;
 
+/* Color Theme Swatches in Hex */
+$fun-summer-woman-1-hex: #BF2C47;
+$fun-summer-woman-2-hex: #F22E62;
+$fun-summer-woman-3-hex: #1B80BF;
+$fun-summer-woman-4-hex: #1EA4D9;
+$fun-summer-woman-5-hex: #77BDD9;
+
+
 @import 'abstracts/mixins';
 @import 'components/posts';
 
 a {
-    color: $Poseidon-3-hex;
+    color: $Poseidon-2-hex;
+    color: $fun-summer-woman-3-hex;
 }
 
 h1.tracking-tighter {

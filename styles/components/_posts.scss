@@ -39,7 +39,7 @@
     display: grid;
 
     @include bp('small') {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 33.33333%;
         gap: 1.5rem;
     }
 
@@ -72,14 +72,21 @@
     }
 }
 
-.teasing-more {
-    @include bp('small') {
-        font-size: 3.8rem;
+.more-stories {
+    &__headline {
+        @include bp('small') {
+            font-size: 3.8rem;
+        }
+    
+        @include bp('medium') {
+            margin-top: 4rem;
+        }
     }
-
-    @include bp('medium') {
-        margin-top: 4rem;
-        margin-bottom: 1rem;
+    
+    &__post {
+        h3 {
+            margin-bottom: 0rem;
+        }
     }
 }
 
