@@ -25,7 +25,7 @@ export default function Alert({ preview }) {
             </>
           ) : (
             <>
-              Wut I dun did: {' '}
+              wut I dun did: {' '}
               <a
                 href={`https://mechaneyes.com/`}
                 className="underline hover:text-success duration-200 transition-colors"
