@@ -5,7 +5,8 @@ $Poseidon-3-hex: #45C4B0;
 $Poseidon-4-hex: #9AEBA3;
 $Poseidon-5-hex: #DAFDBA;
 
-@use 'posts';
+@import 'abstracts/mixins';
+@import 'components/posts';
 
 a {
     color: $Poseidon-3-hex;
@@ -19,36 +20,22 @@ main {
     // background-color: $Poseidon-1-hex;
 }
 
-.hero-post {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.container {
+    padding: 0 0.5rem;
 
-    &__image {
-        &--cover {
-            width: 60vw;
-            height: 50vh;
-            aspect-ratio: 16/9;
-            width: auto;
-            // height: 100%;
+    @include bp('small') {
+        padding: 0 1.25rem;
+    }
 
-            img {
-                object-fit: cover;
-                object-position: center;
-                width: 100%;
-                height: 100%;
-                max-width: none;
-                max-height: none;
-                aspect-ratio: auto;
-            }
+    h1 {
+        font-size: 3.25rem;
+
+        @include bp('small') {
+            font-size: 6.25rem;
         }
     }
 
-    &__meta {
-        margin-bottom: 1rem;
-
-        h3 {
-            margin-bottom: 0.25rem;
-        }
+    section {
+        // border: 1px solid red;
     }
 }
