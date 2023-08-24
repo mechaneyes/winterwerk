@@ -1,21 +1,22 @@
 /* Color Theme Swatches in Hex */
 $Poseidon-1-hex: #012030;
-$Poseidon-2-hex: #13678A;
-$Poseidon-3-hex: #45C4B0;
-$Poseidon-4-hex: #9AEBA3;
-$Poseidon-5-hex: #DAFDBA;
+$Poseidon-2-hex: #13678a;
+$Poseidon-3-hex: #45c4b0;
+$Poseidon-4-hex: #9aeba3;
+$Poseidon-5-hex: #dafdba;
 
 /* Color Theme Swatches in Hex */
-$fun-summer-woman-1-hex: #BF2C47;
-$fun-summer-woman-2-hex: #F22E62;
-$fun-summer-woman-3-hex: #1B80BF;
-$fun-summer-woman-4-hex: #1EA4D9;
-$fun-summer-woman-5-hex: #77BDD9;
+$fun-summer-woman-1-hex: #bf2c47;
+$fun-summer-woman-2-hex: #f22e62;
+$fun-summer-woman-3-hex: #1b80bf;
+$fun-summer-woman-4-hex: #1ea4d9;
+$fun-summer-woman-5-hex: #77bdd9;
 
+@import "abstracts/mixins";
+@import "components/posts";
 
-@import 'abstracts/mixins';
-@import 'components/posts';
-
+// o————————————————————————————————————o Variex —>
+//
 // Variex OT Light
 // font-family: "variex", sans-serif;
 // font-weight: 300;
@@ -27,55 +28,150 @@ $fun-summer-woman-5-hex: #77BDD9;
 // Variex OT Bold
 // font-weight: 700;
 
-a {
-    color: $Poseidon-2-hex;
-    color: $fun-summer-woman-3-hex;
-}
+// o————————————————————————————————————o Century Gothic Pro —>
+//
+// Century Gothic Pro Regular
+// font-family: "century-gothic", sans-serif;
+// font-weight: 400;
+// font-style: normal;
 
-h1.tracking-tighter,
-h2.md\:tracking-tighter {
-    // letter-spacing: -.06em;
-}
+// Century Gothic Pro Italic
+// font-family: "century-gothic", sans-serif;
+// font-weight: 400;
+// font-style: italic;
 
-main {
-    // background-color: $Poseidon-1-hex;
-}
+// Century Gothic Pro Bold
+// font-family: "century-gothic", sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// Century Gothic Pro Bold Italic
+// font-family: "century-gothic", sans-serif;
+// font-weight: 700;
+// font-style: italic;
+
+// o————————————————————————————————————o Industry —>
+//
+// Industry Thin
+// font-family: "industry", sans-serif;
+// font-weight: 200;
+// font-style: normal;
+
+// Industry Light
+// font-family: "industry", sans-serif;
+// font-weight: 300;
+// font-style: normal;
+
+// Industry Book
+// font-family: "industry", sans-serif;
+// font-weight: 400;
+// font-style: normal;
+
+// Industry Medium
+// font-family: "industry", sans-serif;
+// font-weight: 500;
+// font-style: normal;
+
+// Industry Demi
+// font-family: "industry", sans-serif;
+// font-weight: 600;
+// font-style: normal;
+
+// Industry Bold
+// font-family: "industry", sans-serif;
+// font-weight: 700;
+// font-style: normal;
 
 .container {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
+  font-family: "industry", sans-serif;
+  font-weight: 200;
 
-    @include bp('small') {
-        padding: 0 1.25rem;
+  @include bp("small") {
+    padding: 0 1.25rem;
+  }
+
+  a {
+    color: $Poseidon-2-hex;
+    color: $fun-summer-woman-3-hex;
+  }
+
+  h1 {
+    font-family: "variex", sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: "industry", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  h3 {
+    font-family: "industry", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  p {
+    font-family: "industry", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @include bp("xsmall") {
+    h3 {
+      font-size: 1.4rem;
     }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
 }
 
 .home-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    @include bp('medium') {
-        // align-items: flex-end;
-        // margin-bottom: 3rem;
-        
+  @include bp("medium") {
+    display: grid;
+    grid-template-columns: 1fr 33.33333%;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    padding-bottom: 4px;
+
+    @include bp("xsmall") {
+      //   font-size: 2rem;
     }
 
-    h1 {
-        font-family: "variex", sans-serif;
-        font-weight: 700;
-        font-size: 3.25rem;
-        line-height: 3.25rem;
-
-        @include bp('small') {
-            margin-left: -9px;
-            font-size: 5.85rem;
-            line-height: 6.25rem;
-        }
+    @include bp("small") {
+    //   margin-left: -9px;
+      font-size: 2.3rem;
     }
 
-    h4 {
-        @include bp('medium') {
-            // padding-bottom: 7px;
-        }
+    @include bp("medium") {
+      padding: 0;
+      margin-left: -9px;
+      font-size: 3.3rem;
+      text-align: center;
     }
+
+    @include bp("large") {
+      padding: 0;
+      font-size: 4.2rem;
+      text-align: center;
+    }
+  }
+
+  h4 {
+    @include bp("medium") {
+      // padding-bottom: 7px;
+    }
+  }
 }
