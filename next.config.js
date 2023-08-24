@@ -16,13 +16,5 @@ module.exports = {
       'secure.gravatar.com',
       "i0.wp.com",
     ],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "wp.winterwerk.one",
-        port: "",
-        pathname: "/wordpress/wp-content/uploads/**",
-      },
-    ],
   },
 };
