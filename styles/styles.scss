@@ -16,6 +16,17 @@ $fun-summer-woman-5-hex: #77BDD9;
 @import 'abstracts/mixins';
 @import 'components/posts';
 
+// Variex OT Light
+// font-family: "variex", sans-serif;
+// font-weight: 300;
+// font-style: normal;
+
+// Variex OT Regular
+// font-weight: 400;
+
+// Variex OT Bold
+// font-weight: 700;
+
 a {
     color: $Poseidon-2-hex;
     color: $fun-summer-woman-3-hex;
@@ -23,7 +34,7 @@ a {
 
 h1.tracking-tighter,
 h2.md\:tracking-tighter {
-    letter-spacing: -.06em;
+    // letter-spacing: -.06em;
 }
 
 main {
@@ -39,24 +50,32 @@ main {
 }
 
 .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     @include bp('medium') {
-        align-items: flex-end;
-        margin-bottom: 3rem;
+        // align-items: flex-end;
+        // margin-bottom: 3rem;
+        
     }
 
     h1 {
+        font-family: "variex", sans-serif;
+        font-weight: 700;
         font-size: 3.25rem;
         line-height: 3.25rem;
 
         @include bp('small') {
-            font-size: 6.25rem;
+            margin-left: -9px;
+            font-size: 5.85rem;
             line-height: 6.25rem;
         }
     }
 
     h4 {
         @include bp('medium') {
-            padding-bottom: 7px;
+            // padding-bottom: 7px;
         }
     }
 }
