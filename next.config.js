@@ -2,7 +2,7 @@ if (!process.env.WORDPRESS_API_URL) {
   throw new Error(`
     Please provide a valid WordPress instance URL.
     Add to your environment variables WORDPRESS_API_URL.
-  `)
+  `);
 }
 
 /** @type {import('next').NextConfig} */
@@ -14,8 +14,15 @@ module.exports = {
       '1.gravatar.com',
       '2.gravatar.com',
       'secure.gravatar.com',
-      'winterwerk.one',
-      'wp.winterwerk.one',
+      "i0.wp.com",
+    ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "wp.winterwerk.one",
+        port: "",
+        pathname: "/wordpress/wp-content/uploads/**",
+      },
     ],
   },
-}
+};
