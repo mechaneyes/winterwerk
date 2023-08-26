@@ -27,7 +27,7 @@ export default function HeroPost({
               dangerouslySetInnerHTML={{ __html: title }}
             ></Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-lg">
+          <div className="post__time-date mb-4 md:mb-0 text-lg">
             <Date dateString={date} />
           </div>
           {/* <Avatar author={author} /> */}

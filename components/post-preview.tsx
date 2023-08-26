@@ -26,7 +26,7 @@ export default function PostPreview({
           dangerouslySetInnerHTML={{ __html: title }}
         ></Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className="post__time-date text-lg mb-4">
         <Date dateString={date} />
       </div>
       <div
