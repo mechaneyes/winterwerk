@@ -15,7 +15,6 @@ export default function Index({ allPosts: { edges }, preview }) {
     <Layout preview={preview}>
       <Head>
         <title>WinterWerk via Ray Weitzenberg</title>
-        <link rel="stylesheet" href="https://use.typekit.net/usd2ygm.css"></link>
       </Head>
       <Container>
         <Intro />

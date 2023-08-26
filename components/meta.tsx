@@ -27,6 +27,7 @@ export default function Meta() {
         color="#000000"
       />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <link rel="stylesheet" href="https://use.typekit.net/usd2ygm.css"></link>
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
@@ -47,9 +48,14 @@ export default function Meta() {
       <meta property="twitter:domain" content="winterwerk.one" />
       <meta property="twitter:url" content="https://winterwerk.one/" />
       <meta name="twitter:title" content="WinterWerk" />
-      <meta name="twitter:description" content="Reflections on art and tech via Ray Weitzenberg" />
-      <meta name="twitter:image" content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png" />
-      
+      <meta
+        name="twitter:description"
+        content="Reflections on art and tech via Ray Weitzenberg"
+      />
+      <meta
+        name="twitter:image"
+        content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png"
+      />
     </Head>
   );
 }
