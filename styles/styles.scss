@@ -192,3 +192,27 @@ $fun-summer-woman-5-hex: #77bdd9;
     }
   }
 }
+
+.footer {
+  &__tag-line {
+    width: 100%;
+
+    @include bp("large") {
+      width: 60%;
+    }
+  }
+
+  &__links {
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+
+    .bg-black {
+      color: white;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
