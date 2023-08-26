@@ -42,6 +42,13 @@ export default function Meta() {
         property="og:image"
         content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png"
       />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="winterwerk.one" />
+      <meta property="twitter:url" content="https://winterwerk.one/" />
+      <meta name="twitter:title" content="WinterWerk" />
+      <meta name="twitter:description" content="Reflections on art and tech via Ray Weitzenberg" />
+      <meta name="twitter:image" content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png" />
+      
     </Head>
   );
 }
