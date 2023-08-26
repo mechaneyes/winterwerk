@@ -33,7 +33,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta property="og:url" content="https://winterwerk.one/" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="WinterWerk" />
+      <meta property="og:title" content="WinterWerk" key="title" />
       <meta
         property="og:description"
         content="Reflections on art and tech via Ray Weitzenberg"
