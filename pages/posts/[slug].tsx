@@ -36,13 +36,17 @@ export default function Post({ post, posts, preview }) {
                 <meta
                   property="og:title"
                   content={`${post.title} | ${CMS_NAME}`}
-                  // key="og-title"
                   key="title"
                 />
                 <meta
                   property="og:image"
                   content={post.featuredImage?.node?.sourceUrl}
                   // content={post.featuredImage}
+                  key="og-image"
+                />
+                <meta
+                  name="twitter:image"
+                  content={post.featuredImage?.node?.sourceUrl}
                 />
               </Head>
               <PostHeader

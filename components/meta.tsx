@@ -41,6 +41,7 @@ export default function Meta() {
       <meta
         property="og:image"
         content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png"
+        key="og-image"
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="winterwerk.one" />
