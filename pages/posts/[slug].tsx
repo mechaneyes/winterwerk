@@ -33,7 +33,7 @@ export default function Post({ post, posts, preview }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} ${CMS_NAME}`}
+                  {`${post.title} | ${CMS_NAME}`}
                 </title>
                 <meta
                   property="og:image"
