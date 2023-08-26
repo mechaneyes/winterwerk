@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import Head from "next/head";
 
 export default function Meta() {
   return (
@@ -32,11 +31,17 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <meta property="og:url" content="https://winterwerk.one/" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="WinterWerk" />
       <meta
-        name="description"
-        content={`${CMS_NAME}`}
+        property="og:description"
+        content="Reflections on art and tech via Ray Weitzenberg"
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta
+        property="og:image"
+        content="https://wp.winterwerk.one/wordpress/wp-content/uploads/2023/08/winterwerk-og.png"
+      />
     </Head>
-  )
+  );
 }
