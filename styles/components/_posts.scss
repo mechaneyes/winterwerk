@@ -8,7 +8,7 @@
       font-family: "variex", sans-serif;
     }
   }
-  
+
   .post {
     &__image {
       &--cover {
@@ -54,7 +54,7 @@
       margin-left: 0;
 
       h1 {
-          font-family: "industry", sans-serif;
+        font-family: "industry", sans-serif;
       }
 
       h3 {
@@ -98,17 +98,50 @@
   }
 }
 
-// youtube videos
-//
-figure.is-type-video {
-  iframe {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
-    aspect-ratio: 16 / 9;
+figure {
+  // youtube videos
+  //
+  &.is-type-video {
+    iframe {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  &.alignleft {
+    float: left;
+    margin-right: 1rem;
+
+    &.size-medium {
+      width: 50%;
+    }
+
+    img {
+      float: left;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    + p {
+      margin-top: -0.3rem !important;
+    }
   }
 }
+
+// youtube videos
+//
+// figure.is-type-video {
+//   iframe {
+//     width: 100%;
+//     height: 100%;
+//     max-width: none;
+//     max-height: none;
+//     aspect-ratio: 16 / 9;
+//   }
+// }
 
 .more-stories {
   &__headline {
