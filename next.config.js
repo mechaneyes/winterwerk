@@ -17,4 +17,9 @@ module.exports = {
       "i0.wp.com",
     ],
   },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, path: false, stream: false, constants: false };
+    return config;
+
+  }
 };

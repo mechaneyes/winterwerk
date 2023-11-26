@@ -16,6 +16,7 @@ $fun-summer-woman-5-hex: #77bdd9;
 @import "abstracts/mixins";
 @import "components/posts";
 @import "components/typography";
+@import "components/horizontal-scroll";
 
 // o————————————————————————————————————o Variex —>
 //
@@ -23,67 +24,54 @@ $fun-summer-woman-5-hex: #77bdd9;
 // font-family: "variex", sans-serif;
 // font-weight: 300;
 // font-style: normal;
-
 // Variex OT Regular
 // font-weight: 400;
-
 // Variex OT Bold
 // font-weight: 700;
-
 // o————————————————————————————————————o Century Gothic Pro —>
 //
 // Century Gothic Pro Regular
 // font-family: "century-gothic", sans-serif;
 // font-weight: 400;
 // font-style: normal;
-
 // Century Gothic Pro Italic
 // font-family: "century-gothic", sans-serif;
 // font-weight: 400;
 // font-style: italic;
-
 // Century Gothic Pro Bold
 // font-family: "century-gothic", sans-serif;
 // font-weight: 700;
 // font-style: normal;
-
 // Century Gothic Pro Bold Italic
 // font-family: "century-gothic", sans-serif;
 // font-weight: 700;
 // font-style: italic;
-
 // o————————————————————————————————————o Industry —>
 //
 // Industry Thin
 // font-family: "industry", sans-serif;
 // font-weight: 200;
 // font-style: normal;
-
 // Industry Light
 // font-family: "industry", sans-serif;
 // font-weight: 300;
 // font-style: normal;
-
 // Industry Book
 // font-family: "industry", sans-serif;
 // font-weight: 400;
 // font-style: normal;
-
 // Industry Medium
 // font-family: "industry", sans-serif;
 // font-weight: 500;
 // font-style: normal;
-
 // Industry Demi
 // font-family: "industry", sans-serif;
 // font-weight: 600;
 // font-style: normal;
-
 // Industry Bold
 // font-family: "industry", sans-serif;
 // font-weight: 700;
 // font-style: normal;
-
 .container {
   padding: 0 0.5rem;
   font-family: "industry", sans-serif;
