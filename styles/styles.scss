@@ -1,3 +1,9 @@
+@import url("https://use.typekit.net/usd2ygm.css");
+@import "abstracts/mixins";
+@import "components/posts";
+@import "components/typography";
+@import "components/horizontal-scroll";
+
 /* Color Theme Swatches in Hex */
 $Poseidon-1-hex: #012030;
 $Poseidon-2-hex: #13678a;
@@ -11,12 +17,6 @@ $fun-summer-woman-2-hex: #f22e62;
 $fun-summer-woman-3-hex: #1b80bf;
 $fun-summer-woman-4-hex: #1ea4d9;
 $fun-summer-woman-5-hex: #77bdd9;
-
-@import url("https://use.typekit.net/usd2ygm.css");
-@import "abstracts/mixins";
-@import "components/posts";
-@import "components/typography";
-@import "components/horizontal-scroll";
 
 // o————————————————————————————————————o Variex —>
 //

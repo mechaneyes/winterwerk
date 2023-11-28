@@ -43,8 +43,8 @@ const Gallery = ({ images }: { images: string[] }) => {
         <section>
           <img
             className="card"
-            width={768}
-            height={768}
+            width={1024}
+            height={1024}
             alt={el}
             src={`/designers-republic/${el}`}
             key={el}
