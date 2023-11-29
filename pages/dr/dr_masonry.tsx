@@ -9,19 +9,29 @@ interface ImageProps {
 }
 
 const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
+    const [displayCount, setDisplayCount] = useState(50);
+  
+    const loadMoreImages = () => {
+      setDisplayCount(displayCount + 50);
+    };
+
   return (
     <div className="container">
       <main className="gallery gallery--dr gallery--masonry">
-        {/* <Title Name="Gallery" Title={"Proof of Concept"} /> */}
-        <Gallery images={images} />
+        <Gallery images={images.slice(0, displayCount)} />
       </main>
+      <div className="button-container">
+        <button className="button button--primary button--gallery" onClick={loadMoreImages}>
+          Load More
+        </button>
+      </div>
     </div>
   );
 };
 
 const Gallery = ({ images }: { images: string[] }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
     Modal.setAppElement("#__next");
@@ -36,42 +46,36 @@ const Gallery = ({ images }: { images: string[] }) => {
     setModalIsOpen(false);
   };
 
-  const displayedImages = images.slice(0, 100);
+  const displayedImages = images
 
   return (
-    <div className="image-gallery">
-      {displayedImages.map((el: string) => (
-        <section key={el}>
-          <Image
-            className="card"
-            width={1024}
-            height={1024}
-            alt={el}
-            src={`/designers-republic/all/${el}`}
-            onClick={() => openModal(el)}
+    <>
+      <div className="image-gallery">
+        {displayedImages.map((el: string) => (
+          <section key={el}>
+            <Image
+              className="card"
+              width={1024}
+              height={1024}
+              alt={el}
+              src={`/designers-republic/all/${el}`}
+              onClick={() => openModal(el)}
+            />
+          </section>
+        ))}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          closeTimeoutMS={500}
+          className={`modal-content ${modalIsOpen ? "modal-open" : ""}`}
+        >
+          <img
+            src={`/designers-republic/all/${selectedImage}`}
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
           />
-        </section>
-      ))}
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        closeTimeoutMS={500}
-        className={`modal-content ${modalIsOpen ? "modal-open" : ""}`}
-      >
-        <img
-          src={`/designers-republic/all/${selectedImage}`}
-          style={{ maxWidth: "100%", maxHeight: "100%" }}
-        />
-      </Modal>
-    </div>
-  );
-};
-
-const Title = ({ Name, Title }: { Name: string; Title: string }) => {
-  return (
-    <h1 className="title">
-      {Name} {Title}
-    </h1>
+        </Modal>
+      </div>
+    </>
   );
 };
 

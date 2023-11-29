@@ -46,6 +46,16 @@ main.gallery {
       width: 100%;
       height: auto;
     }
+
+    .image-gallery {
+      display: block;
+    }
+
+    .horizontal-break {
+      display: block;
+      width: 100%;
+      height: 1px;
+    }
   }
 }
 
@@ -54,13 +64,13 @@ main.gallery {
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 
-  &--after-open{
+  &--after-open {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.75) !important;
     backdrop-filter: blur(10px);
   }
 
-  &--before-close{
+  &--before-close {
     opacity: 0;
   }
 }
@@ -84,5 +94,27 @@ main.gallery {
 
   img {
     outline: none;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button {
+  &--primary {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
   }
 }
