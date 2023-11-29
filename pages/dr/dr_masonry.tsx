@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Modal from "react-modal";
 import { promises as fs } from "fs";
 import path from "path";
@@ -41,7 +42,7 @@ const Gallery = ({ images }: { images: string[] }) => {
     <div className="image-gallery">
       {displayedImages.map((el: string) => (
         <section key={el}>
-          <img
+          <Image
             className="card"
             width={1024}
             height={1024}
