@@ -136,6 +136,10 @@ main.gallery {
       color: #00b56f;
     }
   }
+
+  &--gallery {
+    max-width: 20em;
+  }
 }
 
 .page-numbers {

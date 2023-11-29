@@ -126,7 +126,7 @@ const Gallery = ({ images }: { images: string[] }) => {
 export async function getStaticProps() {
   const imageDirectory = path.join(
     process.cwd(),
-    "/public/designers-republic/all"
+    "/public/designers-republic"
   );
   const imageFilenames = await fs.readdir(imageDirectory);
 

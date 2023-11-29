@@ -46,7 +46,7 @@ const Gallery = ({ images }: { images: string[] }) => {
             width={1024}
             height={1024}
             alt={el}
-            src={`/designers-republic/00/${el}`}
+            src={`/designers-republic/${el}`}
             key={el}
           />
         </section>
@@ -64,7 +64,7 @@ const Title = ({ Name, Title }: { Name: string; Title: string }) => {
 };
 
 export async function getStaticProps() {
-  const imageDirectory = path.join(process.cwd(), "/public/designers-republic/00");
+  const imageDirectory = path.join(process.cwd(), "/public/designers-republic");
   const imageFilenames = await fs.readdir(imageDirectory);
 
   const filteredImages = imageFilenames.filter((filename) =>
