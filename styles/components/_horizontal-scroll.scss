@@ -100,21 +100,51 @@ main.gallery {
 .button-container {
   display: flex;
   justify-content: center;
+  gap: 1em;
+  width: 100%;
   margin: 20px 0;
 }
 
 .button {
+  width: 100%;
+  font-family: "industry", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+
   &--primary {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #000;
+    background-color: #ff4a90;
+    color: white;
+    border: 2px solid #ff4a90;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 150ms ease-in-out;
 
     &:hover {
       background-color: #fff;
-      color: #000;
+      color: #ff4a90;
     }
   }
+
+  &--half {
+    width: 25%;
+    background-color: #00b56f;
+    border-color: #00b56f;
+
+    &:hover {
+      background-color: #fff;
+      color: #00b56f;
+    }
+  }
+}
+
+.page-numbers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #ff4a90;
 }
