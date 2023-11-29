@@ -73,8 +73,12 @@ $fun-summer-woman-5-hex: #77bdd9;
 // font-weight: 700;
 // font-style: normal;
 
+body * {
+  box-sizing: border-box;
+}
+
 // o————————————————————————————————————o font styling —>
-// 
+//
 .container {
   padding: 0 0.5rem;
   font-family: "industry", sans-serif;
@@ -187,7 +191,7 @@ $fun-summer-woman-5-hex: #77bdd9;
 }
 
 // o————————————————————————————————————o modals —>
-// 
+//
 .ReactModal__Overlay {
   display: flex;
   opacity: 0;
@@ -229,7 +233,7 @@ $fun-summer-woman-5-hex: #77bdd9;
 }
 
 // o————————————————————————————————————o buttons —>
-// 
+//
 .button-container {
   display: flex;
   justify-content: center;
@@ -275,8 +279,33 @@ $fun-summer-woman-5-hex: #77bdd9;
   }
 }
 
+button.copy {
+  &--url {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 4px 0 0 8px;
+    margin: 0 0 0 1em;
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    &.clicked {
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+}
+
 // o————————————————————————————————————o footer —>
-// 
+//
 .footer {
   &__tag-line {
     width: 100%;
