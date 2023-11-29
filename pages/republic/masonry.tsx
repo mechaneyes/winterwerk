@@ -99,8 +99,10 @@ const Gallery = ({ images }: { images: string[] }) => {
           <section key={el}>
             <Image
               className="card"
-              width={1024}
-              height={1024}
+              width={500}
+              height={500}
+              sizes="500px"
+              quality={80}
               alt={el}
               src={`/designers-republic/${el}`}
               onClick={() => openModal(el)}
@@ -117,6 +119,7 @@ const Gallery = ({ images }: { images: string[] }) => {
             className="card"
             width={1024}
             height={1024}
+            quality={100}
             alt={selectedImage}
             src={`/designers-republic/${selectedImage}`}
           />
