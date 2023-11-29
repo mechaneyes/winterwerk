@@ -102,7 +102,7 @@ const Gallery = ({ images }: { images: string[] }) => {
               width={1024}
               height={1024}
               alt={el}
-              src={`/designers-republic/all/${el}`}
+              src={`/designers-republic/${el}`}
               onClick={() => openModal(el)}
             />
           </section>
@@ -114,7 +114,7 @@ const Gallery = ({ images }: { images: string[] }) => {
           className={`modal-content ${modalIsOpen ? "modal-open" : ""}`}
         >
           <img
-            src={`/designers-republic/all/${selectedImage}`}
+            src={`/designers-republic/${selectedImage}`}
             style={{ maxWidth: "100%", maxHeight: "100%" }}
           />
         </Modal>
