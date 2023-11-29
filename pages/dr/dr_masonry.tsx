@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import Modal from "react-modal";
 import { promises as fs } from "fs";
 import path from "path";
 
@@ -17,6 +19,22 @@ const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
 };
 
 const Gallery = ({ images }: { images: string[] }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  useEffect(() => {
+    Modal.setAppElement("#__next");
+  }, []);
+
+  const openModal = (image: string) => {
+    setSelectedImage(image);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const displayedImages = images.slice(0, 100);
 
   return (
@@ -29,10 +47,21 @@ const Gallery = ({ images }: { images: string[] }) => {
             height={1024}
             alt={el}
             src={`/designers-republic/all/${el}`}
-            key={el}
+            onClick={() => openModal(el)}
           />
         </section>
       ))}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        closeTimeoutMS={500}
+        className={`modal-content ${modalIsOpen ? "modal-open" : ""}`}
+      >
+        <img
+          src={`/designers-republic/all/${selectedImage}`}
+          style={{ maxWidth: "100%", maxHeight: "100%" }}
+        />
+      </Modal>
     </div>
   );
 };
