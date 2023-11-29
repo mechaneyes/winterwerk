@@ -8,10 +8,14 @@ import { useEffect } from "react";
 export default function Layout({ preview, children }) {
   useEffect(() => {
     $(document).ready(function () {
-      console.log("ready!");
+      $('.simple-carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
     });
   });
-  
+
   return (
     <>
       <Meta />
@@ -20,7 +24,6 @@ export default function Layout({ preview, children }) {
         <main>{children}</main>
       </div>
       <Footer />
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <Loader />
     </>
   );
