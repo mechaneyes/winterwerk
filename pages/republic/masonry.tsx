@@ -113,9 +113,12 @@ const Gallery = ({ images }: { images: string[] }) => {
           closeTimeoutMS={500}
           className={`modal-content ${modalIsOpen ? "modal-open" : ""}`}
         >
-          <img
+          <Image
+            className="card"
+            width={1024}
+            height={1024}
+            alt={selectedImage}
             src={`/designers-republic/${selectedImage}`}
-            style={{ maxWidth: "100%", maxHeight: "100%" }}
           />
         </Modal>
       </div>
@@ -124,10 +127,7 @@ const Gallery = ({ images }: { images: string[] }) => {
 };
 
 export async function getStaticProps() {
-  const imageDirectory = path.join(
-    process.cwd(),
-    "/public/designers-republic"
-  );
+  const imageDirectory = path.join(process.cwd(), "/public/designers-republic");
   const imageFilenames = await fs.readdir(imageDirectory);
 
   const filteredImages = imageFilenames.filter((filename) =>
