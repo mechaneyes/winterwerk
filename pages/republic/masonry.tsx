@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import { ceil } from "mathjs";
 import Image from "next/image";
 import Modal from "react-modal";
@@ -11,17 +13,30 @@ interface ImageProps {
 
 const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 50;
+  const router = useRouter();
 
+  const itemsPerPage = 50;
   const totalPages = ceil(images.length / itemsPerPage);
 
+  // Get the page number from the query parameters
+  const pageNumber = Number(router.query.page) || 1;
+
+  useEffect(() => {
+    // Set the current page to the page number from the URL
+    setCurrentPage(pageNumber);
+  }, [pageNumber]);
+
   const goToNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    router.push(`/republic/masonry?page=${nextPage}`);
   };
 
   const goToPreviousPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      const previousPage = currentPage - 1;
+      setCurrentPage(previousPage);
+      router.push(`/republic/masonry?page=${previousPage}`);
     }
   };
 
@@ -41,13 +56,17 @@ const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
       <div className="button-container">
         <button
           className="button button--primary button--gallery"
-          onClick={goToPreviousPage}
+          onClick={() => {
+            goToPreviousPage();
+          }}
         >
           Previous Page
         </button>
         <button
           className="button button--primary button--gallery"
-          onClick={goToNextPage}
+          onClick={() => {
+            goToNextPage();
+          }}
         >
           Next Page
         </button>
@@ -58,13 +77,19 @@ const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
       <div className="button-container">
         <button
           className="button button--primary button--gallery button--half"
-          onClick={() => setCurrentPage(1)}
+          onClick={() => {
+            setCurrentPage(1);
+            router.push(`/republic/masonry`);
+          }}
         >
           First Page
         </button>
         <button
           className="button button--primary button--gallery button--half"
-          onClick={() => setCurrentPage(totalPages)}
+          onClick={() => {
+            setCurrentPage(totalPages);
+            router.push(`/republic/masonry?page=${totalPages}`);
+          }}
         >
           Last Page
         </button>
@@ -78,7 +103,7 @@ const Gallery = ({ images }: { images: string[] }) => {
   const [selectedImage, setSelectedImage] = useState("");
   const [isClicked, setIsClicked] = useState(false);
 
-  const imageDirectory = path.join(process.cwd(), "/public/designers-republic");
+  const imageDirectory = path.join(process.cwd(), "/public/dr");
 
   useEffect(() => {
     Modal.setAppElement("#__next");
@@ -107,7 +132,7 @@ const Gallery = ({ images }: { images: string[] }) => {
               sizes="500px"
               quality={80}
               alt={el}
-              src={`/designers-republic/${el}`}
+              src={`/dr/${el}`}
               onClick={() => openModal(el)}
             />
           </section>
@@ -124,7 +149,7 @@ const Gallery = ({ images }: { images: string[] }) => {
             height={1024}
             quality={100}
             alt={selectedImage}
-            src={`/designers-republic/${selectedImage}`}
+            src={`/dr/${selectedImage}`}
           />
           <button
             aria-label="Copy URL"
@@ -132,7 +157,7 @@ const Gallery = ({ images }: { images: string[] }) => {
             type="button"
             onClick={() => {
               navigator.clipboard.writeText(
-                `https://winterwerk.one/designers-republic/${selectedImage}`
+                `https://winterwerk.one/dr/${selectedImage}`
               );
               setIsClicked(true);
               setTimeout(() => setIsClicked(false), 1000);
@@ -164,7 +189,7 @@ const Gallery = ({ images }: { images: string[] }) => {
 };
 
 export async function getStaticProps() {
-  const imageDirectory = path.join(process.cwd(), "/public/designers-republic");
+  const imageDirectory = path.join(process.cwd(), "/public/dr");
   const imageFilenames = await fs.readdir(imageDirectory);
 
   const filteredImages = imageFilenames.filter((filename) =>
