@@ -134,6 +134,9 @@ const Gallery = ({ images }: { images: string[] }) => {
               alt={el}
               src={`/dr/${el}`}
               onClick={() => openModal(el)}
+              loading="eager"
+              placeholder="blur"
+              blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             />
           </section>
         ))}
