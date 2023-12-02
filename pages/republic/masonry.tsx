@@ -49,7 +49,7 @@ const DesignersRepublic: React.FC<ImageProps> = ({ images }) => {
   const imagesForCurrentPage = images.slice(startIndex, endIndex);
 
   return (
-    <div className="container">
+    <div>
       <main className="gallery gallery--dr gallery--masonry">
         <Gallery images={imagesForCurrentPage} />
       </main>
@@ -154,36 +154,40 @@ const Gallery = ({ images }: { images: string[] }) => {
             alt={selectedImage}
             src={`/dr/${selectedImage}`}
           />
-          <button
-            aria-label="Copy URL"
-            className={`copy copy--url ${isClicked ? "clicked" : ""}`}
-            type="button"
-            onClick={() => {
-              navigator.clipboard.writeText(
-                `https://winterwerk.one/dr/${selectedImage}`
-              );
-              setIsClicked(true);
-              setTimeout(() => setIsClicked(false), 1000);
-            }}
-          >
-            <svg
-              className="url-block_icon"
-              data-testid="geist-icon"
-              fill="none"
-              width="30"
-              height="30"
-              shapeRendering="geometricPrecision"
-              stroke="white"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              viewBox="0 0 30 30"
+          <div className="copy-url-element">
+            <button
+              aria-label="Copy URL"
+              className={`button button--copy button--copy-url ${
+                isClicked ? "clicked" : ""
+              }`}
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText(
+                  `https://winterwerk.one/dr/${selectedImage}`
+                );
+                setIsClicked(true);
+                setTimeout(() => setIsClicked(false), 1000);
+              }}
             >
-              <path d="M6 17C4.89543 17 4 16.1046 4 15V5C4 3.89543 4.89543 3 6 3H13C13.7403 3 14.3866 3.4022 14.7324 4M11 21H18C19.1046 21 20 20.1046 20 19V9C20 7.89543 19.1046 7 18 7H11C9.89543 7 9 7.89543 9 9V19C9 20.1046 9.89543 21 11 21Z"></path>
-            </svg>
-          </button>
-          <div className={`copy__msg ${isClicked ? "clicked" : ""}`}>
-            <p>URL</p>
-            <p>Copied!</p>
+              <svg
+                className="url-block_icon"
+                data-testid="geist-icon"
+                fill="none"
+                width="30"
+                height="30"
+                shapeRendering="geometricPrecision"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 30 30"
+              >
+                <path d="M6 17C4.89543 17 4 16.1046 4 15V5C4 3.89543 4.89543 3 6 3H13C13.7403 3 14.3866 3.4022 14.7324 4M11 21H18C19.1046 21 20 20.1046 20 19V9C20 7.89543 19.1046 7 18 7H11C9.89543 7 9 7.89543 9 9V19C9 20.1046 9.89543 21 11 21Z"></path>
+              </svg>
+            </button>
+            <div className={`copy__msg ${isClicked ? "clicked" : ""}`}>
+              <p>URL</p>
+              <p>Copied!</p>
+            </div>
           </div>
         </Modal>
       </div>
