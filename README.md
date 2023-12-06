@@ -16,6 +16,22 @@ http://localhost:3000/api/preview?secret=preview&slug=slugname
 
 <br>
 
+
+# Next.js v WebFinger Protocol
+
+I pulled direction from Rob Earlam's, [How to implement the WebFinger Protocol on a NextJS site](https://robearlam.com/blog/webfinger-on-nextjs). He breaks down the process quite nicely there.
+
+Now i can hand someone the federated address `@mechaneyes@winterwerk.one` or `@ray@winterwerk.one` and it resolves to `@mechaneyes@hypermute.com`.
+
+Now that I know this works, I'm gonna setup the primary address at mechaneyes.com.
+
+My longtime email addy has been, ray@mechaneyes.com, so it's a natural extension to go to `@ray@mechaneyes.com`.
+
+Just a bit more work to be done there.
+
+
+<br>
+
 # Next.js v WordPress
 
 ## Using Headless WordPress with Next.js and Vercel
