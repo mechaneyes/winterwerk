@@ -1,5 +1,6 @@
 .container {
   .header__h2 {
+    margin-bottom: 3rem;
     font-family: "variex", sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
@@ -29,6 +30,7 @@
     }
 
     &__title {
+      max-width: 42rem;
       margin-bottom: 15px;
       font-family: "industry", sans-serif;
       font-size: 2.2rem;
@@ -75,17 +77,28 @@
       }
     }
   }
+
+  figcaption.wp-element-caption {
+    padding-top: 0.5rem;
+    text-align: left;
+  }
 }
 
 .hero-post {
   display: grid;
 
-  @include bp("small") {
+  @include bp("xsmall") {
+    grid-template-columns: 1fr;
+  }
+
+  @include bp("medium") {
     grid-template-columns: 1fr 33.33333%;
     gap: 1.5rem;
   }
 
   &__image {
+    margin-bottom: 1.4rem;
+
     &--cover {
       margin-bottom: 1rem;
     }
@@ -143,22 +156,34 @@ figure {
 //   }
 // }
 
-.more-stories {
-  &__headline {
-    letter-spacing: -0.04em;
+.container {
+  .more-stories {
+    &__headline {
+      letter-spacing: -0.04em;
 
-    @include bp("small") {
-      font-size: 3.8rem;
+      @include bp("small") {
+        font-size: 3.8rem;
+      }
+
+      @include bp("medium") {
+        margin-top: 4rem;
+      }
+    }
+
+    &__post {
+      h3 {
+        margin-bottom: 0rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.75rem;
     }
 
     @include bp("medium") {
-      margin-top: 4rem;
-    }
-  }
-
-  &__post {
-    h3 {
-      margin-bottom: 0rem;
+      h2 {
+        font-size: 2rem;
+      }
     }
   }
 }
