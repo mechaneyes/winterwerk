@@ -10,9 +10,9 @@ WinterWerk also serves as a sandbox for working through some JS+Visuals ideas. C
 ## Previewing Post Drafts Locally
 
 ```
-http://localhost:3000/api/preview?secret=preview&slug=slugname
+http://localhost:3030/api/preview?secret=preview&slug=slugname
 ```
-
+http://localhost:3030/api/preview?secret=preview&slug=lovetempo
 
 <br>
 

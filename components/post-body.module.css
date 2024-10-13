@@ -4,8 +4,7 @@
 
 .content p,
 .content ul,
-.content ol,
-.content blockquote {
+.content ol {
   @apply my-6;
 }
 
